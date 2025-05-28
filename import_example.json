@@ -1,0 +1,95 @@
+{
+  "quizName": "JavaScript Basics Quiz 1",
+  "questions": [
+    {
+      "questionText": "Which of the following is a JavaScript data type?",
+      "options": [
+        { "answer": "String", "isCorrect": true },
+        { "answer": "Integer", "isCorrect": false },
+        { "answer": "Character", "isCorrect": false },
+        { "answer": "Float", "isCorrect": false }
+      ]
+    },
+    {
+      "questionText": "Which company developed JavaScript?",
+      "options": [
+        { "answer": "Microsoft", "isCorrect": false },
+        { "answer": "Netscape", "isCorrect": true },
+        { "answer": "Google", "isCorrect": false },
+        { "answer": "Apple", "isCorrect": false }
+      ]
+    },
+    {
+      "questionText": "What is the output of `console.log(typeof null)`?",
+      "options": [
+        { "answer": "null", "isCorrect": false },
+        { "answer": "object", "isCorrect": true },
+        { "answer": "undefined", "isCorrect": false },
+        { "answer": "string", "isCorrect": false }
+      ]
+    },
+    {
+      "questionText": "Which method is used to parse a JSON string into a JavaScript object?",
+      "options": [
+        { "answer": "JSON.parse()", "isCorrect": true },
+        { "answer": "JSON.stringify()", "isCorrect": false },
+        { "answer": "JSON.toObject()", "isCorrect": false },
+        { "answer": "JSON.convert()", "isCorrect": false }
+      ]
+    },
+    {
+      "questionText": "What is the correct way to declare a constant in JavaScript?",
+      "options": [
+        { "answer": "const myVar = 10;", "isCorrect": true },
+        { "answer": "let myVar = 10;", "isCorrect": false },
+        { "answer": "var myVar = 10;", "isCorrect": false },
+        { "answer": "constant myVar = 10;", "isCorrect": false }
+      ]
+    },
+    {
+      "questionText": "What will `console.log(2 + '2')` output?",
+      "options": [
+        { "answer": "4", "isCorrect": false },
+        { "answer": "22", "isCorrect": true },
+        { "answer": "NaN", "isCorrect": false },
+        { "answer": "undefined", "isCorrect": false }
+      ]
+    },
+    {
+      "questionText": "Which keyword is used to define a JavaScript class?",
+      "options": [
+        { "answer": "class", "isCorrect": true },
+        { "answer": "function", "isCorrect": false },
+        { "answer": "object", "isCorrect": false },
+        { "answer": "define", "isCorrect": false }
+      ]
+    },
+    {
+      "questionText": "What is the purpose of the `Array.prototype.map()` method?",
+      "options": [
+        { "answer": "To filter elements of an array", "isCorrect": false },
+        { "answer": "To transform each element of an array", "isCorrect": true },
+        { "answer": "To find an element in an array", "isCorrect": false },
+        { "answer": "To sort elements of an array", "isCorrect": false }
+      ]
+    },
+    {
+      "questionText": "Which of the following is NOT a falsy value in JavaScript?",
+      "options": [
+        { "answer": "0", "isCorrect": false },
+        { "answer": "null", "isCorrect": false },
+        { "answer": "'false'", "isCorrect": true },
+        { "answer": "undefined", "isCorrect": false }
+      ]
+    },
+    {
+      "questionText": "What does the `===` operator do in JavaScript?",
+      "options": [
+        { "answer": "Compares values and types", "isCorrect": true },
+        { "answer": "Compares values only", "isCorrect": false },
+        { "answer": "Assigns a value", "isCorrect": false },
+        { "answer": "Checks for null values", "isCorrect": false }
+      ]
+    }
+  ]
+}

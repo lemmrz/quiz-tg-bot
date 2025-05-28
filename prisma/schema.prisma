@@ -6,7 +6,6 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma"
 }
 
 datasource db {
@@ -15,7 +14,77 @@ datasource db {
 }
 
 model User {
-  id    Int     @default(autoincrement()) @id
-  email String  @unique
-  name  String?
+  id        Int      @id @default(autoincrement())
+  userName  String   @unique
+  fullName  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt @default(now())
+  Quiz      Quiz[]
+
+  QuizAtempt QuizAttempt[]
+}
+
+model Quiz {
+  id                  Int      @id @default(autoincrement())
+  title               String
+  createdBy           Int
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+  created_by_realtion User     @relation(fields: [createdBy], references: [id])
+
+  Question Question[]
+
+  QuizAtempt QuizAttempt[]
+}
+
+model Question {
+  id        Int      @id @default(autoincrement())
+  quizId    Int
+  question  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  Quiz      Quiz     @relation(fields: [quizId], references: [id])
+
+  QuestionOption QuestionOption[]
+
+  QuizAttemptAnswer QuizAttemptAnswer[]
+}
+model QuestionOption {
+  id        Int      @id @default(autoincrement())
+  questionId Int
+  answer    String
+  isCorrect Boolean
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  Question  Question @relation(fields: [questionId], references: [id])
+
+  QuizAttemptAnswer QuizAttemptAnswer[]
+}
+
+model QuizAttempt {
+  id        Int      @id @default(autoincrement())
+  quizId    Int
+  userId    Int
+  startedAt DateTime @default(now())
+  finishedAt DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  correctAnswers Int?
+  totalQuestions Int?
+  Quiz      Quiz     @relation(fields: [quizId], references: [id])
+  User      User     @relation(fields: [userId], references: [id])
+
+  QuizAttemptAnswer QuizAttemptAnswer[]
+}
+
+model QuizAttemptAnswer {
+  id        Int      @id @default(autoincrement())
+  quizAtemptId Int
+  questionId Int
+  questionOptionId    Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  QuizAttempt QuizAttempt @relation(fields: [quizAtemptId], references: [id])
+  Question   Question   @relation(fields: [questionId], references: [id])
+  QuestionOption QuestionOption @relation(fields: [questionOptionId], references: [id])
 }
